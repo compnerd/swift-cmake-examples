@@ -16,6 +16,9 @@ and android).
 
 ## How to build this demo
 
+If `swiftc` is not in your path, you will need to add `-DCMAKE_Swift_COMPILER=`
+with the path to swiftc.
+
 ```sh
 cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_TESTING=YES
 cd build
