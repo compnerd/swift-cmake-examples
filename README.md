@@ -33,6 +33,8 @@ used in the `HelloWorldCore` library to enable testable exports.
 
 ## What is supported
 
+This project builds on Linux, macOS, and Windows!
+
 - `CMAKE_BUILD_TYPE`
   * `Debug` (no optimizations, debug info)
   * `Release` (all optimizations, no debug info)
