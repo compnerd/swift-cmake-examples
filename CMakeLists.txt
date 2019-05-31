@@ -1,7 +1,7 @@
 
-cmake_minimum_required(VERSION 3.14.20190522)
+cmake_minimum_required(VERSION 3.14.20190603)
 
-project(SwiftDemo LANGUAGES Swift)
+project(SwiftDemo LANGUAGES C Swift)
 
 # place all modules into `swift` in the root of the build tree
 set(CMAKE_Swift_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/swift)
