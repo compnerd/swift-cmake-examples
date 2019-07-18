@@ -40,3 +40,6 @@ playground.xcworkspace
 # Package.resolved
 .build/
 
+# vim (swap files)
+.*.sw[nop]
+
