@@ -7,9 +7,6 @@ project(SwiftDemo LANGUAGES C Swift)
 set(CMAKE_Swift_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/swift)
 
 # enable shared libraries by default (Windows, Darwin)
-#
-# Windows does not yet support static libraries in Swift, Darwin no longer
-# supports static libraries after ABI stability.
 option(BUILD_SHARED_LIBS "Build shared libraries by default"
   $<PLATFORM_ID:Windows,Darwin>)
 
