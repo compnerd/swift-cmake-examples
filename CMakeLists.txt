@@ -10,10 +10,14 @@ set(CMAKE_Swift_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/swift)
 #
 # Windows does not yet support static libraries in Swift, Darwin no longer
 # supports static libraries after ABI stability.
+if(CMAKE_SYSTEM_NAME MATCHES "Windows|Darwin")
+  set(DEFAULT_VALUE_BUILD_SHARED_LIBS YES)
+else()
+  set(DEFAULT_VALUE_BUILD_SHARED_LIBS YES)
+endif()
 option(BUILD_SHARED_LIBS "Build shared libraries by default"
-  $<PLATFORM_ID:Windows,Darwin>)
+ ${DEFAULT_VALUE_BUILD_SHARED_LIBS})
 
-# enable testing by default on debug mode
 option(BUILD_TESTING "Build tests" $<CONFIG:Debug>)
 
 include(CTest)
