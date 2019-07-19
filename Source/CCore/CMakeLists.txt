@@ -2,3 +2,8 @@
 add_library(CCore SHARED
   CCoreVersion.c)
 
+install(TARGETS CCore
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+
