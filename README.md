@@ -20,8 +20,9 @@ If `swiftc` is not in your path, you will need to add `-DCMAKE_Swift_COMPILER=`
 with the path to swiftc.
 
 ```sh
-cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_TESTING=YES
+mkdir build
 cd build
+cmake -S .. -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_TESTING=YES
 ninja
 ninja test
 ```
@@ -44,4 +45,3 @@ This project builds on Linux, macOS, and Windows!
 - `MSVC_RUNTIME_LIBRARY`
   * `MultiThreadedDebugDLL` (`MDd`)
   * `MultiThreadedDLL` (`MD`)
-
