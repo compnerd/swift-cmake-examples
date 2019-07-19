@@ -3,7 +3,7 @@ add_library(HelloWorldCore
   _HelloWorldCore.swift
   HelloWorldCore.swift)
 target_compile_options(HelloWorldCore PRIVATE
-  $<$<BOOL:ENABLE_TESTING>:-enable-testing>)
+  $<$<BOOL:BUILD_TESTING>:-enable-testing>)
 set_target_properties(HelloWorldCore PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_Swift_MODULE_DIRECTORY})
 
@@ -12,4 +12,3 @@ install(TARGETS HelloWorldCore
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   COMPONENT lib)
-
