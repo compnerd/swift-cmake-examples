@@ -20,7 +20,7 @@ If `swiftc` is not in your path, you will need to add `-DCMAKE_Swift_COMPILER=`
 with the path to swiftc.
 
 ```sh
-cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_TESTING=YES
+cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=YES
 cd build
 ninja
 ninja test
@@ -28,7 +28,7 @@ ninja test
 
 This invocation builds the project in release mode with debug information.  This
 enables optimized builds with debug information.  Additionally, the standard
-CMake option `ENABLE_TESTING` is used to enable tests.  This builds tests and is
+CMake option `BUILD_TESTING` is used to enable tests.  This builds tests and is
 used in the `HelloWorldCore` library to enable testable exports.
 
 ## What is supported
@@ -44,4 +44,3 @@ This project builds on Linux, macOS, and Windows!
 - `MSVC_RUNTIME_LIBRARY`
   * `MultiThreadedDebugDLL` (`MDd`)
   * `MultiThreadedDLL` (`MD`)
-
