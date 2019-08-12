@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.15.20190717)
+cmake_minimum_required(VERSION 3.15.20190814)
 
 project(SwiftDemo LANGUAGES C Swift)
 
