@@ -20,7 +20,7 @@ If `swiftc` is not in your path, you will need to add `-DCMAKE_Swift_COMPILER=`
 with the path to swiftc.
 
 ```sh
-cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=YES
+cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=YES -D CMAKE_Swift_FLAGS="-sdk <Path to SDK> -I <Path to SDK>/usr/lib/swift -L <Path to SDK>/usr/lib/swift/<os>"
 cd build
 ninja
 ninja test
