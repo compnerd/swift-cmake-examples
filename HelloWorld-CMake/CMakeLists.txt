@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.15.1)
 
 project(SwiftDemo LANGUAGES C Swift)
 
+if(CMAKE_VERSION VERSION_LESS 3.16)
+  cmake_initialize_per_config_variable(CMAKE_Swift_FLAGS "Swift Compiler Flags")
+endif()
+
 # place all modules into `swift` in the root of the build tree
 set(CMAKE_Swift_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/swift)
 
