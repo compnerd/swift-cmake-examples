@@ -14,7 +14,7 @@ func display(_ message: String) -> Bool {
 
 func main() {
   let accessor: HelloWorldStringAccessor = HelloWorldStringAccessor()
-  guard let message = try? accessor.access(), display(message) else {
+  guard let message = try? accessor.access(), display(message!) else {
     print("unable to display message")
     return
   }
