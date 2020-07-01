@@ -1,0 +1,4 @@
+module CCore {
+  header "CCoreVersion.h"
+  export *
+}
