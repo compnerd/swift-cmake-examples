@@ -40,14 +40,14 @@ ninja -C build test
 
 ```cmd
 set SWIFTFLAGS=-sdk %SDKROOT%
-cmake -B build -D CMAKE_BUILD_TYPE=Release -D BUILD_TESTING=YES -G Ninja -S .
+cmake -B build -D CMAKE_BUILD_TYPE=Release -D CMAKE_Swift_FLAGS=%SWIFTFLAGS% -D BUILD_TESTING=YES -G Ninja -S .
 ninja -C build
 ninja -C build test
 ```
 </details>
 
 This invocation builds the project in release mode with debug information.  This
-enables optimized builds with debug information.  Additionally, the standard
+enables optimized builds with debug information (or release only).  Additionally, the standard
 CMake option `BUILD_TESTING` is used to enable tests.
 
 ## What is supported
