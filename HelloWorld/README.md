@@ -19,12 +19,32 @@ and android).
 If `swiftc` is not in your path, you will need to add `-DCMAKE_Swift_COMPILER=`
 with the path to swiftc.
 
-```sh
-cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=YES
-cd build
-ninja
-ninja test
+<details>
+  <summary>Linux or macOS</summary>
+
+
+```bash
+cmake -B build -D CMAKE_BUILD_TYPE=RelWithDebInfo -D BUILD_TESTING=YES -G Ninja -S .
+ninja -C build
+ninja -C build test
 ```
+</details>
+
+<details>
+  <summary>Windows</summary>
+
+> **NOTE:** we must build with the Release configuration on Windows as the Swift runtime
+> in debug configuration is not distributed with the standard toolchain.  MSVCRT cannot
+> be used in different configurations in the same process, and will result in runtime
+> failures.
+
+```cmd
+set SWIFTFLAGS=-sdk %SDKROOT%
+cmake -B build -D CMAKE_BUILD_TYPE=Release -D BUILD_TESTING=YES -G Ninja -S .
+ninja -C build
+ninja -C build test
+```
+</details>
 
 This invocation builds the project in release mode with debug information.  This
 enables optimized builds with debug information.  Additionally, the standard
