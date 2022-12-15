@@ -1,0 +1,5 @@
+module cxx_library {
+  requires cplusplus
+  header "library.h"
+  link "CXXLibrary"
+}
